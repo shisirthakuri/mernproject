@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
 
@@ -6,6 +7,14 @@ import Navbar from "../components/Navbar"
 
 
 function Home(){
+
+    const fetchBlogs= async()=>{
+       const response= await axios.get("http://localhost:3000/blog")
+    }
+
+    useEffect(()=>{
+fetchBlogs()
+    },[])
     return(
         <>
         <Navbar/>
